@@ -1,0 +1,6 @@
+Name: Enebe Goodnews
+Matric Number: 22CG031856
+Machine Learning Algorithm Used: Linear Regression
+Model Persistence Method Used: Joblib
+Live URL: https://houseprice-project-f73u.onrender.com
+GitHub Repository: https://github.com/Goodnews17/HousePrice_Project
