@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 # Load saved model and scaler
 model = joblib.load("model/house_price_model.pkl")
-scaler = joblib.load("model/scaler.pkl")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -23,13 +22,14 @@ def index():
             float(request.form["YearBuilt"])
         ]
 
-        scaled_features = scaler.transform([features])
-        prediction = model.predict(scaled_features)[0]
+        prediction = model.predict([features])[0]
+
 
     return render_template("index.html", prediction=prediction)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
+
 
 
